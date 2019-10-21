@@ -1,0 +1,13 @@
+version: "3" #versione di docker compose
+
+services: #servizi richiesti nel progetto
+  app: #nome del servizio
+    build:
+      context: .
+    ports: 
+      -"8000:8000"
+    volumes:
+      -./app:/app #mappa la folder del workspace nella folder nell'immagine, automatizzando gli update
+    command: >
+      sh -c "python3 manage.py 0.0.0.0:8000" #comando shell per lanciare django 
+      #sull'address specificato, 0.0.0.0 per il container 
