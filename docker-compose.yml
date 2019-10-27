@@ -2,6 +2,7 @@ version: "3" #versione di docker compose
 
 services: #servizi richiesti nel progetto
   app: #nome del servizio
+    user: $UID:$GID
     build:
       context: . #'.'->current directory
     ports: 
