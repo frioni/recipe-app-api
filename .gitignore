@@ -104,3 +104,10 @@ venv.bak/
 .mypy_cache/
 
 appunti
+comandi.txt
+/.idea/.gitignore
+/.idea/ecipe-app-api.iml
+/.idea/misc.xml
+/.idea/modules.xml
+/.idea/inspectionProfiles/profiles_settings.xml
+/.idea/vcs.xml

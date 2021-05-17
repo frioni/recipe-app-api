@@ -1,7 +1,7 @@
-#docker image to extend to a new one
-FROM python:3.7-alpine
+#docker image to be extended to a new one
+FROM python:3.9.5-alpine3.13
 #optional information about who's maintaining this container
-MAINTAINER udemi frioni
+MAINTAINER MatteoFrigerio
 
 #set to 1 the environment variable pythonbuffered, allowing the output to be printed 
 #without being buffered
@@ -22,7 +22,7 @@ COPY ./app /app
 
 #create a user (-D option means that it will be used at runtime by docker, 
 #and not by logged users) called username
-RUN adduser -D frioniuser
+RUN adduser -D mainUser
 #switch docker to the created user (avoid running the root user is a good practice)
-USER frioniuser
+USER mainUser
 

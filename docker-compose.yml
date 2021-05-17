@@ -10,5 +10,4 @@ services: #servizi richiesti nel progetto
     volumes:
       - ./app:/app #mappa la folder del workspace nella folder nell'immagine, automatizzando gli update
     command: > #andare a capo, per comprensibilità
-      sh -c "python3 manage.py 0.0.0.0:8000" #comando shell per lanciare django 
-      #sull'address specificato, 0.0.0.0 per il container 
+      sh -c "python3 manage.py 0.0.0.0:8000" #comando shell per lanciare django #sull'address specificato, 0.0.0.0 per il container
