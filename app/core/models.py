@@ -11,8 +11,15 @@ class UserManager(BaseUserManager):
             raise ValueError("e-mail required")
         user = self.model(email=self.normalize_email(email), **extra_fieds)
         user.set_password(password)
-        user.save(self.db)
+        user.save(self._db)
 
+        return user
+
+    def create_superuser(self, email, password):
+        """Create and saves new superuser"""
+        user = self.create_user(email, password)
+        user.is_superuser = user.is_staff = True
+        user.save(self._db)
         return user
 
 
