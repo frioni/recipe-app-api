@@ -9,6 +9,9 @@ ENV PYTHONUNBUFFERED 1
 
 #copy the requirements list from the workspace to the image
 COPY ./requirements.txt /requirements.txt
+RUN apk add --update --no-cache postgresql-client
+RUN apk add --update --no-cache --virtual .tmp-build-deps \
+      gcc libc-dev linux-headers postgresql-dev
 #install the requirements on the Docker image
 RUN pip3 install -r /requirements.txt
 
